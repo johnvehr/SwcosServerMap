@@ -6,5 +6,4 @@ public
 client/bower_components
 dist
 /server/config/local.env.js
-/server/api/data/swcosJsData.json
 /server/api/upload/excel/NewList2014_swcos_swcos.xlsx

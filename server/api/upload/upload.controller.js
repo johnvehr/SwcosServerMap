@@ -11,7 +11,7 @@ exports.index = function(req, res) {
   var options = {
     encoding: 'utf8'
   }
-  fs.readFile('server/api/data/swcosJsData.json',options,function(err,data){
+  fs.readFile('server/api/upload/data/swcosJsData.json',options,function(err,data){
     res.json(data);
   })
   //res.json([]);
@@ -26,7 +26,7 @@ exports.read = function(req, res){
 exports.write = function(req,res){
   var data_to_write = JSON.stringify(req.body)
   console.log(data_to_write)
-  fs.writeFile('server/api/data/swcosJsData.json',data_to_write,function(err){
+  fs.writeFile('server/api/upload/data/swcosJsData.json',data_to_write,function(err){
     if (err) return console.log(err);
   })
 }
