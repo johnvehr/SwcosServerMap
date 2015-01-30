@@ -4,6 +4,11 @@ angular.module('swcosServerMapApp')
   .controller('UploadCtrl', function ($scope, $http, localStorageService) {
     $scope.filesChanged = function(elm){
       $scope.files=elm.files
+      if($scope.files.substring($scope.files.length, $scope.files.length - 4) === "xlsx"){
+        $scope.fileStatus = true;
+      }else {
+        false;
+      }
       $scope.$apply();
     }
 
@@ -11,7 +16,7 @@ angular.module('swcosServerMapApp')
     $scope.dynamicStatus;
 
     $scope.upload = function() {
-      $scope.dynamicStatus = "Receiving addresses back from Google..This could take a few minutes"
+      $scope.dynamicStatus = "Receiving address coordinates(lat/lng) back from Google..This could take a few minutes."
       var file = $scope.files;
       console.log('file is' + JSON.stringify(file));
 

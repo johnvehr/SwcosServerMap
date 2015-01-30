@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="well">
+  <h1 class="page-header">SWCOS Upload Dashboard</h1>
     <form role="form">
         <div class="form-group">
-          <label for="file">File</label>
+          <label for="file">Upload File in xlsx format. <span ng-hide="fileStatus" class="glyphicon glyphicon-ok" style="color:green;"></span></label>
           <input type="file" file-input="files" class="form-control" style="color:black;">
         </div>
         <div class="checkbox">
@@ -20,4 +20,3 @@
         <progressbar animate="true" value="dynamic" type="success"><b></b></progressbar>
       </div>
   </div>
-</div>
