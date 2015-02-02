@@ -4,11 +4,7 @@ angular.module('swcosServerMapApp')
   .controller('UploadCtrl', function ($scope, $http, localStorageService) {
     $scope.filesChanged = function(elm){
       $scope.files=elm.files
-      if($scope.files.substring($scope.files.length, $scope.files.length - 4) === "xlsx"){
-        $scope.fileStatus = true;
-      }else {
-        false;
-      }
+      
       $scope.$apply();
     }
 

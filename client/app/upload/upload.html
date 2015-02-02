@@ -1,9 +1,11 @@
 <div class="container">
   <h1 class="page-header">SWCOS Upload Dashboard</h1>
     <form role="form">
+        
         <div class="form-group">
-          <label for="file">Upload File in xlsx format. <span ng-hide="fileStatus" class="glyphicon glyphicon-ok" style="color:green;"></span></label>
+          <label for="file">Upload File in xlsx format. <span ng-hide="!fileStatus" class="glyphicon glyphicon-ok" style="color:green;"></span></label>
           <input type="file" file-input="files" class="form-control" style="color:black;">
+          {{files}}
         </div>
         <div class="checkbox">
           <p class="help-block">You have a previous file that will be overwritten. Do you want to download old file for your records?</p>
