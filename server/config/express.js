@@ -26,7 +26,7 @@ module.exports = function(app) {
   app.use(bodyParser({
     limit: '900mb'
   }))
-  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
   app.use(multer({
     dest: './server/api/upload/excel',

@@ -1,0 +1,24 @@
+.container {
+  min-height:600px;
+  max-height:800px;
+}.row{
+  margin-bottom:30px;
+  i{
+    display:inline-block;
+    padding-bottom:5px;
+  }
+}
+.progress-bar {
+  transition: width 1s ease-in-out;
+  background-color:#ffcd00 !important;
+}
+
+.dynamicClass {
+  text-transform:uppercase;
+  color:gray !important;
+  text-align:left;
+}
+
+.dynamicBar {
+  background-color:#ffcd00 !important;
+}

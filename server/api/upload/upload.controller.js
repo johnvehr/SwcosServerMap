@@ -19,6 +19,7 @@ exports.index = function(req, res) {
 
 exports.read = function(req, res){
   fs.readdir(path.join(__dirname, '/excel'),function(err,files){
+    //console.log(files)
     res.json(files)
   })
 }
@@ -71,7 +72,9 @@ exports.upload = function(req,res,next){
         return jsonData;
       }
 
+
       var xls_file = req.files.file.path.toString();
+
       xls(xls_file, function(err,data){
         if(err) throw err;
 

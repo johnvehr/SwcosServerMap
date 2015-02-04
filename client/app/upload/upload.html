@@ -1,24 +1,48 @@
 <div class="container">
   <h1 class="page-header">SWCOS Upload Dashboard</h1>
-    <form role="form">
-        
+    <div class="row">
+      <div class="col-md-6">
+    <i>Upload file in xlsx format.</i>
+    <span ng-show="files != 'invalid' && files" class="glyphicon glyphicon-ok" style="color:green;"></span>
+    <span ng-show="files === 'invalid'"style="color:red;">Please check the file is valid xlsx.</span>
+
+    <form role="form" class="form-inline">
         <div class="form-group">
-          <label for="file">Upload File in xlsx format. <span ng-hide="!fileStatus" class="glyphicon glyphicon-ok" style="color:green;"></span></label>
           <input type="file" file-input="files" class="form-control" style="color:black;">
-          {{files}}
         </div>
+
+        <!--
         <div class="checkbox">
           <p class="help-block">You have a previous file that will be overwritten. Do you want to download old file for your records?</p>
           <label>
             <input type="checkbox"> Download Old File.
           </label>
         </div>
-        <button class="btn btn-default" type="button" ng-click="upload()">Upload</button>
+      -->
+        <button ng-disabled="files === 'invalid'" class="btn btn-default" type="button" ng-click="upload()">Upload</button>
       </form>
-
+    </div>
+    <div class="col-md-6">
       <div ng-hide="!dynamicStatus">
         <p class="help-block">{{dynamicStatus}}</p>
         <p class="help-block">{{dynamicFixed}}%</p>
         <progressbar animate="true" value="dynamic" type="success"><b></b></progressbar>
       </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <span class="glyphicon glyphicon-download-alt"><span>
+          <input type="checkbox" ng-model="dlPriorFile">
+          {{lastFileUpload[0]}}
+      </div>
+    </div>
+
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <i>Designed and Development by <a target="_blank" href="http://eyebytesolutions.com">Eye Byte Solutions</a></i>
   </div>
+</footer>

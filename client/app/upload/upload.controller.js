@@ -4,14 +4,13 @@ angular.module('swcosServerMapApp')
   .controller('UploadCtrl', function ($scope, $http, localStorageService) {
     $scope.filesChanged = function(elm){
       $scope.files=elm.files
-      
       $scope.$apply();
     }
 
     $scope.dynamic = 0;
     $scope.dynamicStatus;
 
-    $scope.upload = function() {
+    $scope.upload = function('') {
       $scope.dynamicStatus = "Receiving address coordinates(lat/lng) back from Google..This could take a few minutes."
       var file = $scope.files;
       console.log('file is' + JSON.stringify(file));
@@ -120,11 +119,9 @@ angular.module('swcosServerMapApp')
       }
     })
 
-    $scope.swcosUploads = function(){
-      $http.get('/api/uploads/read').success(function(file){
-        console.log(file)
-      })
-    }
+    $http.get('/api/uploads/read').success(function(file){
+      $scope.lastFileUpload = file ? file : "No previous file upload."
+    })
 
 
   });

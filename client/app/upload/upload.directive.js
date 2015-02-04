@@ -15,9 +15,19 @@ angular.module('swcosServerMapApp')
       restrict:'A',
       link:function(scope,elm,attr){
         elm.bind('change',function(){
-          $parse(attr.fileInput)
-          .assign(scope,elm[0].files)
-          scope.$apply();
+          var elmFile = elm[0].files[0].name,
+              elmType = elmFile.substring(elmFile.length - 4,elmFile.length);
+          if(elmType === 'xlsx'){
+            console.log('called')
+            $parse(attr.fileInput)
+            .assign(scope,elm[0].files)
+            scope.$apply();
+          }else {
+            $parse(attr.fileInput)
+            .assign(scope,'invalid')
+            scope.$apply();
+          }
+
         })
       }
     };
