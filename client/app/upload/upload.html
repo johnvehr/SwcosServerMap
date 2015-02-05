@@ -1,46 +1,47 @@
 <div class="container">
-  <h1 class="page-header">SWCOS Upload Dashboard</h1>
-    <div class="row">
-      <div class="col-md-6">
-    <i>Upload file in xlsx format.</i>
-    <span ng-show="files != 'invalid' && files" class="glyphicon glyphicon-ok" style="color:green;"></span>
-    <span ng-show="files === 'invalid'"style="color:red;">Please check the file is valid xlsx.</span>
+  <h1 class="page-header">SWCOS Site Dashboard</h1>
 
-    <form role="form" class="form-inline">
-        <div class="form-group">
-          <input type="file" file-input="files" class="form-control" style="color:black;">
-        </div>
+        <tabset>
+          <tab heading="Upload">
+            <img src="assets/images/Swcos_Logo.png">
+            <h5>Upload file in xlsx format.
+            <span ng-show="files != 'invalid' && files" class="glyphicon glyphicon-ok" style="color:green;"></span>
+            <span ng-show="files === 'invalid'"style="color:red;">Please check the file is valid xlsx.</span>
+            </h5>
 
-        <!--
-        <div class="checkbox">
-          <p class="help-block">You have a previous file that will be overwritten. Do you want to download old file for your records?</p>
-          <label>
-            <input type="checkbox"> Download Old File.
-          </label>
-        </div>
-      -->
-        <button ng-disabled="files === 'invalid'" class="btn btn-default" type="button" ng-click="upload()">Upload</button>
-      </form>
-    </div>
-    <div class="col-md-6">
-      <div ng-hide="!dynamicStatus">
-        <p class="help-block">{{dynamicStatus}}</p>
-        <p class="help-block">{{dynamicFixed}}%</p>
-        <progressbar animate="true" value="dynamic" type="success"><b></b></progressbar>
-      </div>
-    </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <span class="glyphicon glyphicon-download-alt"><span>
-          <input type="checkbox" ng-model="dlPriorFile">
-          {{lastFileUpload[0]}}
-      </div>
-    </div>
+            <form role="form" class="form-inline">
+                <div class="form-group">
+                  <input type="file" file-input="files" class="form-control" style="color:black;">
+                </div>
 
+                <button ng-disabled="files === 'invalid'" class="btn btn-default" type="button" ng-click="upload()">Upload</button>
+              </form>
+
+
+              <div class="dynamicStatus" ng-hide="!dynamicStatus">
+                <i>{{dynamicStatus}} ({{dynamicFixed}}%)</i>
+                <progressbar animate="true" value="dynamic" type="success"><b></b></progressbar>
+              </div>
+
+          </tab>
+          <tab>
+            <img src="assets/images/Swcos_Logo.png">
+            <tab-heading>
+              <i class="glyphicon glyphicon-download-alt"></i> Files
+            </tab-heading>
+            <div class="upload-container">
+                <h5></h5><br>
+                <p ng-repeat="file in lastFileUpload">
+                  <a class="btn btn-info btn-default" href="/server/api/upload/excel/{{file}}" download="{{file}}" target="_self">
+                    <span class="glyphicon glyphicon-download-alt"></span>
+                  </a>
+                  {{file}}
+                </p>
+              </div>
+          </tab>
+        </tabset>
 
 </div>
-
 <footer class="footer">
   <div class="container">
     <i>Designed and Development by <a target="_blank" href="http://eyebytesolutions.com">Eye Byte Solutions</a></i>

@@ -8,17 +8,31 @@
     padding-bottom:5px;
   }
 }
-.progress-bar {
-  transition: width 1s ease-in-out;
-  background-color:#ffcd00 !important;
+.tab-content {
+  padding-top:25px !important;
+  img {
+    float:right;
+  }
 }
 
-.dynamicClass {
-  text-transform:uppercase;
-  color:gray !important;
-  text-align:left;
+.nav-tabs > li > a {
+  color:#00a9bc;
+}
+/*
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+  color:#8c7000;
+}
+*/
+.progress-bar {
+  transition: width 1s ease-in-out;
+  background-color:#E5D9BD !important;
+}
+
+.dynamicStatus {
+  padding-top:25px;
 }
 
 .dynamicBar {
-  background-color:#ffcd00 !important;
+  background-color:#E5D9BD !important;
 }
+.footer {text-align:center;}

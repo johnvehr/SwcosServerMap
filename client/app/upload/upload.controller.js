@@ -9,9 +9,13 @@ angular.module('swcosServerMapApp')
 
     $scope.dynamic = 0;
     $scope.dynamicStatus;
+    $scope.dlPriorFile = true;
 
-    $scope.upload = function('') {
-      $scope.dynamicStatus = "Receiving address coordinates(lat/lng) back from Google..This could take a few minutes."
+    $scope.upload = function() {
+      if($scope.dlPriorFile && $scope.lastFileUpload){
+        console.log('Downloading.')
+      }
+      $scope.dynamicStatus = "Receiving address coordinates from Google. This may take a few minutes."
       var file = $scope.files;
       console.log('file is' + JSON.stringify(file));
 
