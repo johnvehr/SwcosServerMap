@@ -1,6 +1,7 @@
 <div class="container">
   <h1 class="page-header">SWCOS Site Dashboard</h1>
 
+
         <tabset>
           <tab heading="Upload">
             <img src="assets/images/main-logo-final.png">
@@ -9,14 +10,14 @@
             <span ng-show="files === 'invalid'"style="color:red;">Please check the file is valid xlsx.</span>
             </h5>
 
-            <form role="form" class="form-inline">
-                <div class="form-group">
-                  <input type="file" file-input="files" class="form-control" style="color:black;">
-                </div>
 
-                <button ng-disabled="files === 'invalid'" class="btn btn-default" type="button" ng-click="upload()">Upload</button>
-              </form>
+<form role="form" class="form-inline">
+    <div class="form-group">
+      <input type="file" file-input="data.files" class="form-control" style="color:black;">
+    </div>
 
+    <button ng-disabled="files === 'invalid'" class="btn btn-default" type="button" ng-click="upload()">Upload</button>
+  </form>
 
               <div class="dynamicStatus" ng-hide="!dynamicStatus">
                 <i>{{dynamicStatus}} ({{dynamicFixed}}%)</i>
@@ -30,13 +31,10 @@
               <i class="glyphicon glyphicon-download-alt"></i> Files
             </tab-heading>
             <div class="upload-container">
-                <h5></h5><br>
-                <p ng-repeat="file in lastFileUpload">
-                  <a class="btn btn-info btn-default" href="/server/api/upload/excel/{{file}}" download="{{file}}" target="_self">
-                    <span class="glyphicon glyphicon-download-alt"></span>
+                <h5></h5><br>          
+                  <a ng-repeat="file in lastFileUpload" class="btn btn-info btn-default" href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{{file}}" download="{{file}}" target="_self">
+                    <span class="glyphicon glyphicon-download-alt"></span>{{file}}
                   </a>
-                  {{file}}
-                </p>
               </div>
           </tab>
         </tabset>

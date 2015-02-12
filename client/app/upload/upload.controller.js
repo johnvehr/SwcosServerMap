@@ -2,8 +2,9 @@
 
 angular.module('swcosServerMapApp')
   .controller('UploadCtrl', function ($scope, $http, localStorageService) {
+    $scope.data = {}
     $scope.filesChanged = function(elm){
-      $scope.files=elm.files
+      $scope.data.files=elm.files
       $scope.$apply();
     }
 
@@ -14,11 +15,11 @@ angular.module('swcosServerMapApp')
     $scope.upload = function() {
 
       $scope.dynamicStatus = "Receiving address coordinates from Google. This may take a few minutes.";
-      var file = $scope.files;
+      var file = $scope.data.files;
       console.log('file is' + JSON.stringify(file));
 
       var fd = new FormData();
-      angular.forEach($scope.files,function(file){
+      angular.forEach($scope.data.files,function(file){
         fd.append('file',file)
 
       })
