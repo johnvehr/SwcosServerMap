@@ -1,7 +1,8 @@
 .container {
   min-height:600px;
   max-height:800px;
-}.row{
+}
+.row{
   margin-bottom:30px;
   i{
     display:inline-block;
@@ -10,13 +11,14 @@
 }
 .tab-content {
   padding-top:25px !important;
-  img {
-    float:right;
-  }
+
 }
 
 .nav-tabs > li > a {
   color:#00a9bc;
+  &:hover {
+	  cursor: pointer;
+  }
 }
 /*
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
@@ -35,5 +37,10 @@
 .dynamicBar {
   background-color:#00a9bc !important;
 }
-.footer {text-align:center;}
-.footer{a{color:#00a9bc;}}
+.footer {
+	text-align:center;
+	font-style: italic;
+	a {
+		color:#00a9bc;
+	}
+	}

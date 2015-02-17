@@ -1,10 +1,15 @@
 <div class="container">
-  <h1 class="page-header">SWCOS Site Dashboard</h1>
+  <h1 class="page-header">University of Maryland Baltimore</h1>
+  <h2>Students Working in Baltimore Interactive Map Dashboard</h2>
+  <p>Upload new student information here for the interactive map.</p>
 
 
         <tabset>
-          <tab heading="Upload">
-            <img src="assets/images/main-logo-final.png">
+          <tab>
+          <tab-heading>
+              <i class="glyphicon glyphicon-upload"></i> Site Upload
+          </tab-heading>
+            
             <h5>Upload file in xlsx format.
             <span ng-show="files != 'invalid' && files" class="glyphicon glyphicon-ok" style="color:green;"></span>
             <span ng-show="files === 'invalid'"style="color:red;">Please check the file is valid xlsx.</span>
@@ -26,14 +31,14 @@
 
           </tab>
           <tab>
-            <img src="assets/images/main-logo-final.png">
             <tab-heading>
-              <i class="glyphicon glyphicon-download-alt"></i> Files
+              <i class="glyphicon glyphicon-download-alt"></i> Download Files
             </tab-heading>
             <div class="upload-container">
                 <h5></h5><br>          
+                <!-- check the href. might need to go straight to file instead of data:application-->
                   <a ng-repeat="file in lastFileUpload" class="btn btn-info btn-default" href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{{file}}" download="{{file}}" target="_self">
-                    <span class="glyphicon glyphicon-download-alt"></span>{{file}}
+                    <span class="glyphicon glyphicon-download-alt"></span> {{file}}
                   </a>
               </div>
           </tab>
@@ -41,7 +46,6 @@
 
 </div>
 <footer class="footer">
-  <div class="container">
-    <i>Designed and Development by <a target="_blank" href="http://eyebytesolutions.com">Eye Byte Solutions</a></i>
+  <div class="container">Design and Development by <a target="_blank" href="http://eyebytesolutions.com">Eye Byte Solutions</a>
   </div>
 </footer>
