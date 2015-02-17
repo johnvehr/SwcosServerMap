@@ -1,7 +1,33 @@
-.container {
-  min-height:600px;
-  max-height:800px;
+// Colors
+$EBSorange: #FF9F35;
+$EBSdkOrange: darken($EBSorange, 20%);
+$EBSgrey: #ccc;
+$EBSdkGrey: darken($EBSgrey, 20%);
+$EBSwhite: #fff;
+
+$UMB_Blu: #00a9bc;
+$UMB_Grn: #8cc63f;
+$UMB_grey: #1a1a1a;
+$UMB_Yel: #ffe202;
+$UMB_Dk_Yel: #ffcb00;
+$UMB_Red: #e51837;
+
+
+// Variables
+$EBSbasePadding: 10px;
+$EBSbasePaddingSmall: 5px;
+$EBSbasePaddingLarge: 20px;
+
+h1, h2 {
+	color: $UMB_grey;
+	
 }
+
+.help {
+	font-style: italic;
+	font-size: .9em;
+}
+
 .row{
   margin-bottom:30px;
   i{
@@ -15,7 +41,7 @@
 }
 
 .nav-tabs > li > a {
-  color:#00a9bc;
+  color: $UMB_Blu;
   &:hover {
 	  cursor: pointer;
   }
@@ -27,20 +53,22 @@
 */
 .progress-bar {
   transition: width 1s ease-in-out;
-  background-color:#00a9bc !important;
+  background-color:$EBSdkOrange !important;
 }
 
 .dynamicStatus {
-  padding-top:25px;
+  padding-top:$EBSbasePaddingLarge;
 }
 
 .dynamicBar {
-  background-color:#00a9bc !important;
+  background-color:$EBSdkOrange !important;
 }
 .footer {
+	padding: $EBSbasePaddingLarge;
+	margin-top: $EBSbasePaddingLarge;
 	text-align:center;
 	font-style: italic;
 	a {
-		color:#00a9bc;
+		color: $EBSorange;
 	}
 	}
