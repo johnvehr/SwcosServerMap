@@ -41,7 +41,7 @@ angular.module('swcosServerMapApp')
 
             var called = 0
             var pauseCounter = -1
-
+            //REFACTOR
             setTimeout(function(){
               pauseCounter += 1;
               params[pauseCounter]['id'] = pauseCounter;
@@ -66,7 +66,7 @@ angular.module('swcosServerMapApp')
                   requestSites();
                 }
               })
-            },500 * key)
+            },1500 * key)//know before you do
           }
         //}
 
@@ -79,7 +79,6 @@ angular.module('swcosServerMapApp')
           for(var i=0;i<siteKeys.length;i++){
             newSiteData.push(localStorageService.get(siteKeys[i]))
           }
-          //console.log(newSiteData)
           $http.post('/api/uploads/write',newSiteData).success(function(res){
             console.log('success')
           }).error(function(){
@@ -109,10 +108,6 @@ angular.module('swcosServerMapApp')
       })
     }
 
-    /*$http.get('server/api/data/swcosJsData.json').success(function(sites){
-      $scope.sites = sites
-
-    })*/
     $http.get('/api/uploads').success(function(sites){
       if(sites){
         $scope.sites = angular.fromJson(sites)

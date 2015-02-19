@@ -3,6 +3,7 @@ Server side upload engine for SWCOS via Express/Node/Angular.
 
 **Setup**
   * `npm install`
+  * `bower install`
   * `grunt serve`
 
 **Additional node modules**
