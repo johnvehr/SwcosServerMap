@@ -11,8 +11,8 @@
           </tab-heading>
             
             <h5>Upload file in xlsx format.
-            <span ng-show="files != 'invalid' && files" class="glyphicon glyphicon-ok" style="color:green;"></span>
-            <span ng-show="files === 'invalid'"style="color:red;">Please check the file is valid xlsx.</span>
+            <span ng-show="data.files != 'invalid' && data.files" class="glyphicon glyphicon-ok" style="color:green;"></span>
+            <span ng-show="data.files === 'invalid'"style="color:red;">Please check the file is valid xlsx.</span>
             </h5>
 
 
@@ -21,7 +21,7 @@
       <input type="file" file-input="data.files" class="form-control" style="color:black;">
     </div>
 
-    <button ng-disabled="files === 'invalid'" class="btn btn-default" type="button" ng-click="upload()">Upload</button>
+    <button ng-disabled="data.files === 'invalid'" class="btn btn-default" type="button" ng-click="upload()">Upload</button>
   </form>
 
               <div class="dynamicStatus" ng-hide="!dynamicStatus">
@@ -35,11 +35,28 @@
               <i class="glyphicon glyphicon-download-alt"></i> Download Files
             </tab-heading>
             <div class="upload-container">
+                <h5>Most recent file uploads.</h5>
+                <div class="table-responsive">
+                  <table class="table">
+                    <tr>
+                      <th>File Name</th>
+                      <th>Download</th>
+                    </tr>
+                    <tr ng-repeat="file in lastFileUpload">
+                      <td>{{file}}</td>
+                      <td><a href="{{file}}" download="{{file}}" target="_blank"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+                    </tr>
+
+                  </table>
+                </div>
+        
+
                 <h5></h5><br>          
                 <!-- check the href. might need to go straight to file instead of data:application-->
                   <a ng-repeat="file in lastFileUpload" class="btn btn-info btn-default" href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{{file}}" download="{{file}}" target="_self">
                     <span class="glyphicon glyphicon-download-alt"></span> {{file}}
                   </a>
+
               </div>
           </tab>
           

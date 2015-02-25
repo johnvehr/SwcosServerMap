@@ -22,3 +22,8 @@ Server side upload engine for SWCOS via Express/Node/Angular.
   * post "/api/uploads/write"
   * get  "/api/uploads"
   * get  "/api/uploads/read" (under construc.)
+
+
+**JV SUGGESTIONS**
+I would entertain having a map built in or option to display uploaded data to proof
+before its written and read on endpoints being requested. or make error catching extremely solid.   

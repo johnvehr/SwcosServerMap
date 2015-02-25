@@ -33,6 +33,7 @@ exports.write = function(req,res){
 }
 
 exports.upload = function(req,res,next){
+  //NEED TO LIMIT FILES ON MULTER
   /*fs.readdir(path.join(__dirname, '/excel'),function(err,files){
     files.forEach(function(file){
       if(req.files.file.filename == file){
@@ -48,7 +49,6 @@ exports.upload = function(req,res,next){
     var jsonData = [];
     for ( var i = 1, length = array.length; i < length; i++ )
       {
-        //RE WRITE LOOP - ADDING TOO MUCH
         var withComma = array[i]
         var withOutComma = []
         for(var x in withComma){
@@ -81,8 +81,5 @@ exports.upload = function(req,res,next){
         var data_for_map = JSON.stringify(convertToJSON(data));
         //var data_for_client = JSON.stringify(data) //this is raw data before conv
         res.json(data_for_map)
-        /*fs.writeFile('test_file.json',data_for_map,function(err){
-          if (err) return console.log(err);
-        })*/
       })
 }
