@@ -46,16 +46,8 @@
                       <td>{{file}}</td>
                       <td><a href="{{file}}" download="{{file}}" target="_blank"><span class="glyphicon glyphicon-download-alt"></span></a></td>
                     </tr>
-
                   </table>
                 </div>
-        
-
-                <h5></h5><br>          
-                <!-- check the href. might need to go straight to file instead of data:application-->
-                  <a ng-repeat="file in lastFileUpload" class="btn btn-info btn-default" href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{{file}}" download="{{file}}" target="_self">
-                    <span class="glyphicon glyphicon-download-alt"></span> {{file}}
-                  </a>
 
               </div>
           </tab>
@@ -71,7 +63,6 @@
 	            <li>Upload new, modified .xls</li>
 	            <li>Check the Map to ensure Markers/sites are showing</li>
             </ol>
-
           </tab>
         </tabset>
 
